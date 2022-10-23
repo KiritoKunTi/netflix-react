@@ -8,6 +8,7 @@ const SignUp = () => {
   const { user, signUp } = UserAuth();
 
   const navigate = useNavigate();
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -15,8 +16,7 @@ const SignUp = () => {
       await signUp(email, password);
       navigate("/");
     } catch (error) {
-      console.log(email, password);
-      console.log(error);
+      setError(error.message);
     }
   };
 
@@ -68,6 +68,7 @@ const SignUp = () => {
                   <Link to="/login">Sign In</Link>
                 </p>
               </form>
+              {error ? <p className="bg-red-400 p-3">{error}</p> : null}
             </div>
           </div>
         </div>

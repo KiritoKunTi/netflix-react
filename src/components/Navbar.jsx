@@ -12,7 +12,7 @@ const Navbar = () => {
       await logOut();
       navigate("/signup");
     } catch (error) {
-      console.log(error);
+      alert(error);
     }
   };
 
