@@ -15,15 +15,11 @@ const Row = ({ title, fetchURL, rowID }) => {
   const slideLeft = () => {
     var scroll = document.getElementById("slider" + rowID);
     scroll.scrollLeft -= 500;
-    console.log(scroll.scrollLeft);
-    console.log("slide left");
   };
 
   const slideRight = () => {
     var scroll = document.getElementById("slider" + rowID);
     scroll.scrollLeft += 500;
-    console.log(scroll.scrollLeft);
-    console.log("slide right");
   };
 
   return (
